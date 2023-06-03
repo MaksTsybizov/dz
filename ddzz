@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+System.out.print("Введите координаты первой точки через запятую: ");
+String[] point1 = scanner.nextLine().replaceAll("[\\[\\]]", "").split(", ");
+System.out.print("Введите координаты второй точки через запятую: ");
+String[] point2 = scanner.nextLine().replaceAll("[\\[\\]]", "").split(", ");
+System.out.print("Введите координаты третьей точки через запятую: ");
+String[] point3 = scanner.nextLine().replaceAll("[\\[\\]]", "").split(", ");
+
+double x1 = Double.parseDouble(point1[0]);
+double y1 = Double.parseDouble(point1[1]);
+double x2 = Double.parseDouble(point2[0]);
+double y2 = Double.parseDouble(point2[1]);
+double x3 = Double.parseDouble(point3[0]);
+double y3 = Double.parseDouble(point3[1]);
+
+double x = (x1 + x2 + x3) / 3;
+double y = (y1 + y2 + y3) / 3;
+
+System.out.printf("Барицентр треугольника: {%.4f, %.4f}", x, y);
+}
+}
